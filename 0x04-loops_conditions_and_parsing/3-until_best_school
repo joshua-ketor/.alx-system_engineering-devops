@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Display "Best School" 10 times using until
+
+i=0
+string="Best School"
+
+until [[ "$i" -eq 10 ]];
+do
+	echo "$string"
+	: $(( i++ ))
+done
