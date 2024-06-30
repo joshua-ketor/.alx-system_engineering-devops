@@ -1,0 +1,6 @@
+# SSH Client configuration file
+
+Host web-01
+    Hostname 228963-web-01
+    PasswordAuthentication no
+    IdentityFile ~/.ssh/school
