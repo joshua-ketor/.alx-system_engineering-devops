@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Install nginx and set it up
+
+# Install nginx
+sudo apt-get update
+sudo apt-get install nginx
+
+# Adjust the Firewall
+sudo ufw allow 'Nginx HTTP'
+sudo ufw allow 'OpenSSH'
+
+# Assign ownership to the account signed in on
+sudo chown -R "$USER":"$USER" /var/www/html
+
+# Set appropriate permissions
+sudo chmod -R 755 /var/www
+
+#create a default page
+sudo mkdir /var/www/html/old
+sudo mv /var/www/html/*.html /var/www/html/old
+echo "Hello World!" | sudo tee /var/www/html/index.html > /dev/null
+sudo service nginx
